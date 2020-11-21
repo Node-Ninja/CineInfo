@@ -26,7 +26,7 @@ class BackEndService {
 
       return results;
     } else {
-      throw <dynamic>["Something Went Wrong", res];
+      return Future.error(res);
     }
   }
 
@@ -42,7 +42,7 @@ class BackEndService {
 
       return details;
     } else {
-      throw <dynamic>["Something Went Wrong", res];
+      return Future.error(res);
     }
   }
 
@@ -58,7 +58,7 @@ class BackEndService {
 
       return credits;
     } else {
-      throw <dynamic>["Something Went Wrong", res];
+      return Future.error(res);
     }
   }
 
@@ -74,7 +74,7 @@ class BackEndService {
 
       return images;
     } else {
-      throw <dynamic>["Something Went Wrong", res];
+      return Future.error(res);
     }
   }
 
@@ -90,7 +90,7 @@ class BackEndService {
 
       return videos;
     } else {
-      throw <dynamic>["Something Went Wrong", res];
+      return Future.error(res);
     }
   }
 
@@ -106,7 +106,7 @@ class BackEndService {
 
       return details;
     } else {
-      throw <dynamic>["Something Went Wrong", res];
+      return Future.error(res);
     }
   }
 
@@ -122,7 +122,7 @@ class BackEndService {
 
       return credits;
     } else {
-      throw <dynamic>["Something Went Wrong", res];
+      return Future.error(res);
     }
   }
 
@@ -141,7 +141,7 @@ class BackEndService {
         "movieId": movieId
       });
     } catch (e) {
-      throw <dynamic>["Something Went Wrong", e];
+      return Future.error(e);
     }
   }
 
@@ -154,7 +154,7 @@ class BackEndService {
         {"details": details, "credits": credits, "personId": personId},
       );
     } catch (e) {
-      throw <dynamic>["Something Went Wrong", e];
+      return Future.error(e);
     }
   }
 }

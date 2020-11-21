@@ -3,6 +3,7 @@ import 'package:CineInfo/screens/movie_detail.dart';
 import 'package:CineInfo/services/backend_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:http/http.dart';
 
 class Category extends StatefulWidget {
   final String category;
@@ -102,6 +103,18 @@ class _CategoryState extends State<Category> {
                     ),
                   );
                 },
+              );
+            } else if (snapshot.hasError) {
+              //  there was an error on the request;
+              Response res = snapshot.error;
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Text(
+                  'Something went wrong, please try again later',
+                  style: TextStyle(
+                    color: Colors.white70,
+                  ),
+                ),
               );
             } else {
               return Stack(children: <Widget>[
